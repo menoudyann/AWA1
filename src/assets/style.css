@@ -1,11 +1,3 @@
-/* ./src/assets/style.css */
-@import 'tailwindcss/components';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";

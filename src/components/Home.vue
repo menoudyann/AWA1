@@ -1,5 +1,7 @@
 <template>
-    <Header />
+    <div>
+        <p>Home</p>
+    </div>
 </template>
 <script>
 import Header from "./Header.vue";
