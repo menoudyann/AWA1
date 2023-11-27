@@ -19,20 +19,21 @@ export default {
 .sticky-header {
   position: sticky;
   top: 0;
-  background-color: #333;
+  background-color: #f9f9f9;
   padding: 10px;
   z-index: 1000;
-  display: flex; /* Utilisez flexbox pour aligner le logo et la navigation */
-  align-items: center; /* Centre les éléments verticalement */
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
 }
 
 .sticky-header .logo {
-  height: 50px; /* Ou la taille que vous souhaitez pour votre logo */
-  margin-right: 20px; /* Espace entre le logo et la navigation */
+  height: 50px; 
+  margin-right: 20px; 
 }
 
 .sticky-header nav a {
-  color: white;
+  color: #000000;
   text-decoration: none;
   padding: 8px 15px;
   margin: 0 10px;
