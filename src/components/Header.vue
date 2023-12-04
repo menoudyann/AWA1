@@ -4,16 +4,15 @@
       <fwb-navbar-logo
         alt="Flowbite logo"
         image-url="./src/assets/logo.png"
-        link="#"
+        link="/"
       >
       </fwb-navbar-logo>
     </template>
     <template #default="{ isShowMenu }">
       <fwb-navbar-collapse :is-show-menu="isShowMenu">
-        <fwb-navbar-link is-active link="#"> Home </fwb-navbar-link>
-        <fwb-navbar-link link="#"> Services </fwb-navbar-link>
-        <fwb-navbar-link link="#"> Pricing </fwb-navbar-link>
-        <fwb-navbar-link link="#"> Contact </fwb-navbar-link>
+        <fwb-navbar-link is-active link="/">Home</fwb-navbar-link>
+        <fwb-navbar-link link="/aboutus">About us</fwb-navbar-link>
+        <fwb-navbar-link link="/contact">Contact</fwb-navbar-link>
       </fwb-navbar-collapse>
     </template>
   </fwb-navbar>

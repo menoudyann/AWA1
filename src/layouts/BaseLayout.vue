@@ -4,7 +4,6 @@
         <main class="flex-grow bg-yellow-50" >
             <RouterView />
         </main>
-        
     </div>
 </template>
 
