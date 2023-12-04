@@ -1,26 +1,33 @@
 <template>
   <section class="bg-white dark:bg-gray-900">
     <div
-      class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12"
+      class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
     >
-      <div class="mr-auto place-self-center lg:col-span-7">
-        <h1
-          class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white"
-        >
-          La nouvelle boisson énergissante de Ste-Croix
-        </h1>
-        <p
-          class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
-        >
-          Découvrez dès maintenant cette exclusivité !
-        </p>
+      <video class="mx-auto mb-8 lg:mb-12 w-full rounded-xl" autoplay  muted>
+        <source src="@/assets/video.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la balise vidéo.
+      </video>
+
+      <h1
+        class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+      >
+        La nouvelle boisson énergissante de Ste-Croix
+      </h1>
+      <p
+        class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
+      >
+        Retrouvez cette exclusivité à la cantine du CPNV
+      </p>
+      <div
+        class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4"
+      >
         <a
           href="#"
-          class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-400 hover:bg-primary-300 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+          class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-400 hover:bg-primary-300 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
         >
           Voir la composition
           <svg
-            class="w-5 h-5 ml-2 -mr-1"
+            class="ml-2 -mr-1 w-5 h-5"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -34,16 +41,25 @@
         </a>
         <a
           href="#"
-          class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+          class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
         >
+          <svg
+            class="w-6 h-5 mr-2 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 20 21"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 3.464V1.1m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175C17 15.4 17 16 16.462 16H3.538C3 16 3 15.4 3 14.807c0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 10 3.464ZM4 3 3 2M2 7H1m15-4 1-1m1 5h1M6.54 16a3.48 3.48 0 0 0 6.92 0H6.54Z"
+            />
+          </svg>
           Contactez-nous
         </a>
-      </div>
-      <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-        <img
-          src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png"
-          alt="mockup"
-        />
       </div>
     </div>
   </section>
@@ -52,19 +68,14 @@
 <script>
 export default {
   name: "MainHero",
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    // buttonLabel: {
-    //   type: String,
-    //   required: true
-    // }
-  },
 };
 </script>
+
+<style>
+#banner_image {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>

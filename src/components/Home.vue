@@ -1,6 +1,6 @@
 <template>
     <div>
-        <MainHero title="Hello" description="descr" buttonLabel="clickme"></MainHero>
+        <MainHero />
     </div>
 </template>
 <script>
