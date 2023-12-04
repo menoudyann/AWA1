@@ -1,14 +1,16 @@
 <template>
     <div>
-        <p>Home</p>
+        <MainHero title="Hello" description="descr" buttonLabel="clickme"></MainHero>
     </div>
 </template>
 <script>
-import Header from "./Header.vue";
+//import Header from "./Header.vue";
+import MainHero from "./MainHero.vue";
+
 export default {
     lang: 'fr',
     components: {
-        Header
+        MainHero,
     },
     name: 'Home',
 }
