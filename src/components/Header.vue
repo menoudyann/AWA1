@@ -2,7 +2,7 @@
   <fwb-navbar>
     <template #logo>
       <fwb-navbar-logo
-        alt="Flowbite logo"
+        alt="LY ENERGY Logo"
         image-url="./src/assets/logo.png"
         link="/"
       >
