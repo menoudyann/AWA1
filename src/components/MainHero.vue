@@ -1,8 +1,6 @@
 <template>
   <section class="bg-white dark:bg-gray-900">
-    <div
-        class=" px-4 mx-auto max-w-screen-xl text-center lg:px-12"
-    >
+    <div class=" px-4 mx-auto max-w-screen-xl text-center lg:px-12">
 
       <ScrollyVideo src="../../../public/video.mp4" full=true debug=true class="banner-video" frameThreshold="0.01" />
 
