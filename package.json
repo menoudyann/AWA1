@@ -11,7 +11,7 @@
     "flowbite": "^2.2.0",
     "flowbite-vue": "^0.1.0",
     "gsap-trial": "^3.12.3",
-    "scrollmagic": "^2.0.8",
+    "scrolly-video": "^0.0.16",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
