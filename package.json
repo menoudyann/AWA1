@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/motion": "^2.0.0",
     "flowbite": "^2.2.0",
     "flowbite-vue": "^0.1.0",
     "gsap-trial": "^3.12.3",

@@ -1,6 +1,6 @@
 <template>
   <section class="bg-white dark:bg-gray-900 section-banner">
-    
+
     <ScrollyVideo
       src="../../../video.mp4"
       full="true"
@@ -91,8 +91,8 @@ export default {
 }
 
 .banner-video video {
-    width: 100%; 
-    height: 300px !important; 
+    width: 100%;
+    height: 300px !important;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
