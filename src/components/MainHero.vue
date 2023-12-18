@@ -1,12 +1,9 @@
 <template>
   <section class="bg-white dark:bg-gray-900 section-banner">
 
-    <ScrollyVideo
-      src="../../../video.mp4"
-      full="true"
-      class="banner-video"
-      frameThreshold="0.01"
-    />
+    <div class="scrolly-video-container">
+      <ScrollyVideo src=/video.mp4 frameThreshold=0.001 sticky=true />
+    </div>
 
     <div
       class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
@@ -68,36 +65,17 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import ScrollyVideo from "scrolly-video/dist/ScrollyVideo.vue";
-
-export default {
-  name: "MainHero",
-  components: {
-    ScrollyVideo,
-  },
-};
 </script>
 
 <style>
-.section-banner {
-  width: 100vw !important;
-  position: relative !important;
-  left: 50% !important;
-  right: 50% !important;
-  margin-left: -50vw !important;
-  margin-right: -50vw !important;
-  overflow-x: hidden !important;
+.scrolly-video-container {
+  height: 300vh;
 }
 
-.banner-video video {
-    width: 100%;
-    height: 300px !important;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    object-position: 20%;
-
+.scrolly-video-container video {
+  object-fit: cover !important;
+  object-position: 20% !important;
 }
 </style>
