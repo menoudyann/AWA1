@@ -2,7 +2,7 @@
   <section class="bg-white dark:bg-gray-900 section-banner">
     
     <ScrollyVideo
-      src="../../../public/video.mp4"
+      src="../../../video.mp4"
       full="true"
       class="banner-video"
       frameThreshold="0.01"
@@ -100,7 +100,4 @@ export default {
     object-position: 20%;
 
 }
-
-
-
 </style>
