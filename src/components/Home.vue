@@ -1,21 +1,22 @@
 <template>
-    <div>
+    <div class="container">
         <MainHero />
         <MarketingSection />
-        <Chart />
+        <Chart2 />
     </div>
 </template>
 <script>
-import Chart from "./Chart.vue";
-import MainHero from "./MainHero.vue";
+import MainHero from "./Mainhero.vue";
 import MarketingSection from "./MarketingSection.vue";
+import Chart2 from './Chart2.vue'
 
 export default {
     lang: 'fr',
     components: {
     MainHero,
     MarketingSection,
-    Chart
+    Chart2
+    
 },
     name: 'Home',
 }
