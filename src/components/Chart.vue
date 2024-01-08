@@ -1,110 +1,201 @@
 <template>
-  <div class="container">
-    <CanvasJSChart
-      :options="newVSReturningVisitorsOptions"
-      @chart-ref="chartRef"
-      :styles="styleOptions"
-    />
-    
+  <div
+    class="chart-container py-8 px-4"
+    v-motion
+    :initial="{ opacity: 0, x: -100 }"
+    :visible="{ opacity: 1, x: 0 }"
+    :delay="300"
+  >
+  
+    <canvas id="pie-chart"></canvas>
+    <canvas id="bar-chart"></canvas>
+    <div
+      class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12"
+    >
+      <h2
+        class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white"
+      >
+        Notre formule magique...
+      </h2>
+      <p
+        class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400"
+      >
+        Retrouvez tous les ingrédients de notre boisson énergissante
+      </p>
+      
+    </div>
   </div>
 </template>
 
 <script>
+import Chart from "chart.js/auto";
+
 export default {
   data() {
     return {
-      chart: null,
-      showBackButton: false,
-      buttonStyle: {
-        backgroundColor: "#F25F5C",
-      },
-      visitorsDrilldownedChartOptions: {
-        animationEnabled: true,
-        theme: "light2",
-        axisY: {
-          gridThickness: 0,
-          lineThickness: 1,
-        },
-        data: [],
-      },
-      newVSReturningVisitorsOptions: {
-        animationEnabled: true,
-        theme: "light2",
-        title: {
-        },
-        subtitles: [
-          {
-            
-          },
-        ],
-        data: [],
-      },
-      options: {
-        "New vs Returning Visitors": [
-          {
-            type: "pie",
-            name: "New vs Returning Visitors",
-            startAngle: 90,
-            cursor: "pointer",
-            explodeOnClick: false,
-            showInLegend: false,
-            legendMarkerType: "square",
-            indexLabelPlacement: "inside",
-            indexLabelFontColor: "white",
-            dataPoints: [
-              {
-                y: 20,
-                name: "Banane",
-                color: "#e0e0e0",
-                indexLabel: "20%",
-              },
-              {
-                y: 25,
-                name: "Eau",
-                color: "#36a1cd",
-                indexLabel: "25%",
-              },
-              {
-                y: 11,
-                name: "Sucre",
-                color: "#2981a2",
-                indexLabel: "11%",
-              },
-              {
-                y: 12,
-                name: "Pommes",
-                color: "#1c607b",
-                indexLabel: "12%",
-              },
-              {
-                y: 14,
-                name: "Guava",
-                color: "#4ef3bb",
-                indexLabel: "14%",
-              },
-              {
-                y: 15,
-                name: "Caféine",
-                color: "#c7c6c6",
-                indexLabel: "15%",
-              },
-            ],
-          },
-        ],
-      },
-      styleOptions: {
-        width: "100%",
-        height: "500px",
-      },
+      pieChart: null,
+      barChart: null,
     };
   },
+  mounted() {
+    let observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          this.initCharts();
+        });
+      },
+      { threshold: 0.9 }
+    );
+
+    observer.observe(document.getElementById("pie-chart"));
+    observer.observe(document.getElementById("bar-chart"));
+  },
   methods: {
-    chartRef(chartInstance) {
-      this.chart = chartInstance;
-      this.chart.options = this.newVSReturningVisitorsOptions;
-      this.chart.options.data = this.options["New vs Returning Visitors"];
-      this.chart.render();
+    initCharts() {
+      if (this.pieChart) this.pieChart.destroy();
+      if (this.barChart) this.barChart.destroy();
+
+      this.createPieChart();
+      this.createBarChart();
+    },
+    createPieChart() {
+      const data = {
+        labels: ["Rouge", "Bleu", "Jaune", "Vert", "Violet", "Orange"],
+        datasets: [
+          {
+            label: "Répartition des couleurs",
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+              "rgba(255, 99, 132, 0.2)",
+              "rgba(54, 162, 235, 0.2)",
+              "rgba(255, 206, 86, 0.2)",
+              "rgba(75, 192, 192, 0.2)",
+              "rgba(153, 102, 255, 0.2)",
+              "rgba(255, 159, 64, 0.2)",
+            ],
+            borderColor: [
+              "rgba(255, 99, 132, 1)",
+              "rgba(54, 162, 235, 1)",
+              "rgba(255, 206, 86, 1)",
+              "rgba(75, 192, 192, 1)",
+              "rgba(153, 102, 255, 1)",
+              "rgba(255, 159, 64, 1)",
+            ],
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      const config = {
+        type: "pie",
+        data: data,
+        options: {
+          animation: {
+            duration: 2000,
+            easing: "easeOutBounce",
+            onComplete: function () {
+              console.log("Animation complete!");
+            },
+          },
+          scales: {
+            y: {
+              display: false,
+              beginAtZero: true,
+              grid: {
+                display: false,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+      };
+
+      new Chart(document.getElementById("pie-chart"), config);
+    },
+    createBarChart() {
+      const data = {
+        labels: ["Jan", "Fév", "Mar", "Avr", "Mai", "Jun"],
+        datasets: [
+          {
+            label: "test",
+            data: [50, 60, 70, 180, 190, 200],
+            backgroundColor: "rgba(0, 123, 255, 0.5)",
+            borderColor: "rgba(0, 123, 255, 1)",
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      const config = {
+        type: "bar",
+        data: data,
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              display: false,
+              grid: {
+                display: false,
+              },
+            },
+            x: {
+              display: false,
+              grid: {
+                display: false,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          animation: {
+            tension: {
+              duration: 1000,
+              easing: "linear",
+              from: 1,
+              to: 0,
+              loop: true,
+            },
+          },
+        },
+      };
+
+      new Chart(document.getElementById("bar-chart"), config);
     },
   },
 };
 </script>
+
+<style>
+.chart-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#pie-chart,
+#bar-chart {
+  max-width: 40%;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  #pie-chart,
+  #bar-chart {
+    max-width: 100%;
+    margin-bottom: 20px;
+    height: auto;
+  }
+}
+
+canvas {
+  flex: 1;
+}
+</style>

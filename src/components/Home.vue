@@ -1,21 +1,21 @@
 <template>
-    <div class="container">
+    <div class="overflow-clip">
         <MainHero />
         <MarketingSection />
-        <Chart2 />
+        <Chart />
     </div>
 </template>
 <script>
 import MainHero from "./Mainhero.vue";
 import MarketingSection from "./MarketingSection.vue";
-import Chart2 from './Chart2.vue'
+import Chart from './Chart.vue'
 
 export default {
     lang: 'fr',
     components: {
     MainHero,
     MarketingSection,
-    Chart2
+    Chart
     
 },
     name: 'Home',
