@@ -10,7 +10,8 @@ const routes = [
     path: "/",
     component: BaseLayout,
     children: [
-      { path: "/", component: Home },
+      { path: "/", redirect: "/home" },
+      { path: "/home", component: Home },
       { path: "/contact", component: ContactForm },
       { path: "/aboutus", component: AboutUs }
     ],

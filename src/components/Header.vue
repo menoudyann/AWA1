@@ -1,3 +1,10 @@
+<style>
+.router-link-active {
+  font-weight: bold;
+  color: rgb(251 191 36);
+}
+</style>
+
 <template>
   <fwb-navbar>
     <template #logo>
@@ -10,9 +17,9 @@
     </template>
     <template #default="{ isShowMenu }">
       <fwb-navbar-collapse :is-show-menu="isShowMenu">
-        <fwb-navbar-link is-active link="/">Home</fwb-navbar-link>
-        <fwb-navbar-link link="/aboutus">About us</fwb-navbar-link>
-        <fwb-navbar-link link="/contact">Contact</fwb-navbar-link>
+        <router-link to="/home" exact>Home</router-link>
+        <router-link to="/aboutus" exact>About us</router-link>
+        <router-link to="/contact" exact>Contact</router-link>
       </fwb-navbar-collapse>
     </template>
   </fwb-navbar>
