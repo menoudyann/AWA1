@@ -9,10 +9,10 @@
                     <fwb-footer-link href="/aboutus">
                         About
                     </fwb-footer-link>
-                    <fwb-footer-link href="/">
+                    <fwb-footer-link href="/privacy-policy">
                         Privacy Policy
                     </fwb-footer-link>
-                    <fwb-footer-link href="/">
+                    <fwb-footer-link href="/licensing">
                         Licensing
                     </fwb-footer-link>
                     <fwb-footer-link href="/contact">

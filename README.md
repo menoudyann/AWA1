@@ -28,6 +28,32 @@ Nous avons choisi de partir sur la présentation de la nouvelle boisson énergis
 - [Git](https://git-scm.com/)
 - [GitHub Project](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
 
+## Installation
+
+### Prérequis
+
+- [Node.js](https://nodejs.org/en/)
+
+### Installation
+
+1. Installer les dépendances
+
+```bash
+npm install
+```
+
+2. Lancer le serveur de développement
+
+```bash
+npx vite
+```
+
+3. Ouvrir le projet dans le navigateur
+
+```bash
+http://localhost:5173 ou le lien indiqué dans la console
+```
+
 ## Liens rapides
 
 - [Repos GitHub](https://github.com/menoudyann/AWA1)
