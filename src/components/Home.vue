@@ -1,14 +1,14 @@
 <template>
-    <div>
+    <div class="overflow-clip">
         <MainHero />
         <MarketingSection />
         <Chart />
     </div>
 </template>
 <script>
-import Chart from "./Chart.vue";
-import MainHero from "./MainHero.vue";
+import MainHero from "./Mainhero.vue";
 import MarketingSection from "./MarketingSection.vue";
+import Chart from './Chart.vue'
 
 export default {
     lang: 'fr',
@@ -16,6 +16,7 @@ export default {
     MainHero,
     MarketingSection,
     Chart
+    
 },
     name: 'Home',
 }
