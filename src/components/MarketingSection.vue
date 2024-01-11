@@ -1,9 +1,9 @@
 <template>
     <section class="bg-white dark:bg-gray-900" v-motion :initial="{ opacity: 0, x: -100 }" :visible="{ opacity: 1, x: 0 }"
-        :delay="300">
+        :delay="250">
         <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
             <div>
-                <img id="imgParachute" class="w-full drop-shadow-xl rounded-lg hover:scale-100 scale-95"
+                <img id="imgParachute" class="w-full drop-shadow-xl rounded-lg hover:scale-105 scale-95 duration-200"
                     src="/parachute.jpg" alt="parachute in horizon" />
             </div>
             <div class="mt-4 md:mt-0">
@@ -28,7 +28,7 @@
     </section>
 
     <section class="bg-white dark:bg-gray-900" v-motion :initial="{ opacity: 0, x: 100 }" :visible="{ opacity: 1, x: 0 }"
-        :delay="300">
+        :delay="250">
         <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
             <div class="mt-4 md:mt-0">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -49,7 +49,7 @@
                 </a>
             </div>
             <div>
-                <img id="imgSkateboard" class="w-full drop-shadow-xl rounded-lg hover:scale-100 scale-95"
+                <img id="imgSkateboard" class="w-full drop-shadow-xl rounded-lg hover:scale-105 scale-95 duration-200"
                     src="/skateboard.jpg" alt="dashboard image" />
             </div>
         </div>
